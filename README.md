@@ -12,13 +12,13 @@
 
 ## Nivel 2
 
-[ ] Primeiro projeto com Node.JS
-[ ] Desafio 04 - Fundamentos Node.JS
-[ ] Iniciando back-end do app
-[ ] Desafio 05 - Database upload
+- [ ] Primeiro projeto com Node.JS
+- [ ] Desafio 04 - Fundamentos Node.JS
+- [ ] Iniciando back-end do app
+- [ ] Desafio 05 - Database upload
 
 
 
 
 
-## Ultima atualização 2020-04-14 _CesarJs_
+###### Ultima atualização 2020-04-14 _CesarJs_
