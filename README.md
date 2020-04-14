@@ -2,13 +2,13 @@
 
 ## Nivel 1
 
-[x] Back-end com Node.JS
-[x] Desafio 01 - Conceitos com Noje.JS
-[ ] Front-end com ReactJs
-[ ] Desafio 02 - Conceitos REactJS
-[ ] Mobile com React Native
-[ ] Desafio 03 - Conceitos do REact Native
-[ ] TypeScript
+- [x] Back-end com Node.JS
+- [x] Desafio 01 - Conceitos com Noje.JS
+- [ ] Front-end com ReactJs
+- [ ] Desafio 02 - Conceitos REactJS
+- [ ] Mobile com React Native
+- [ ] Desafio 03 - Conceitos do REact Native
+- [ ] TypeScript
 
 ## Nivel 2
 
