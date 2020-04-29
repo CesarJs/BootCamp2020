@@ -1,10 +1,10 @@
 const express = require('express');
 const  { uuid } = require('uuidv4');
-
+const cors = require('cors');
 const app = express();
 
+app.use(cors());
 app.use(express.json());
-
 /**
  * Métodos HTTP
  *
@@ -39,7 +39,7 @@ function logRequests(request, response, next){
 
 app.use(logRequests);
 
-app.get('/projects', (request, response) => {
+app.get('/repositories', (request, response) => {
 	const { title } = request.query;
 	const results = title
 	? projects.filter(project => project.title.includes(title))
@@ -48,16 +48,16 @@ app.get('/projects', (request, response) => {
 	return response.json(results);
 });
 
-app.post('/projects', (request, response) => {
-	const { title, owner} = request.body;
-	const project = { id: uuid(), title, owner};
+app.post('/repositories', (request, response) => {
+	const { title, owner, url, techs} = request.body;
+	const project = { id: uuid(), title, owner, url, techs};
 	projects.push(project);
 	return response.json(project);
 });
 
-app.put('/projects/:id', (request, response) => {
+app.put('/repositories/:id', (request, response) => {
 	const { id } = request.params;
-	const { title, owner} = request.body;
+	const { title, url, techs} = request.body;
 	const projectIndex = projects.findIndex(project => project.id == id);
 	if(projectIndex < 0){
 		return response.status(400).json({ error: 'Project not found' });
@@ -65,7 +65,8 @@ app.put('/projects/:id', (request, response) => {
 	const project = {
 		id,
 		title,
-		owner
+		url,
+		techs
 	};
 	projects[projectIndex] = project;
 
@@ -73,7 +74,7 @@ app.put('/projects/:id', (request, response) => {
 
 });
 
-app.delete('/projects/:id', (request, response) => {
+app.delete('/repositories/:id', (request, response) => {
 	const { id } = request.params;
 	const projectIndex = projects.findIndex(project => project.id == id);
 	if(projectIndex < 0){
