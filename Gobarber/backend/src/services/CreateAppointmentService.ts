@@ -1,4 +1,4 @@
-import { startOfHour, format } from 'date-fns';
+import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
 
 import AppError from '../errors/AppError';
@@ -14,7 +14,7 @@ class CreateAppointmentService {
   public async execute({ date, provider_id }: Request): Promise<Appointment> {
     const appointmentsRepository = getCustomRepository(AppointmentsRepository);
 
-    const appontimentDate = format(startOfHour(date), 'yyyy-MM-dd HH:mm:ss');
+    const appontimentDate = startOfHour(date);
 
     const findAppointmentInSameDate = await appointmentsRepository.findByDate(
       appontimentDate,
